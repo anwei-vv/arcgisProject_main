@@ -24,7 +24,7 @@ define([
             , templatePicker
             , geocoder;
 
-        requestLayer = map.getLayer('ViviData');
+        requestLayer = map.getLayer('collisionData');
 
         layers.push(requestLayer);
 
@@ -36,10 +36,10 @@ define([
 
         templatePicker.startup();
 
-        geocoder = new Geocoder({
-            map: map
-        }, "search");
-        geocoder.startup();
+//        geocoder = new Geocoder({
+//            map: map
+//        }, "search");
+//        geocoder.startup();
 
         var layerInfos = array.map(layers, function(layer) {
             return {
