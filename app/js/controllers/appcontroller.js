@@ -7,9 +7,10 @@ define([
     'esri/toolbars/edit',
     'esri/dijit/editing/Editor',
     'esri/dijit/editing/TemplatePicker',
+    'esri/dijit/Geocoder',
     'esri/config',
-    'esri/IdentityManager',
-    'esri/dijit/Geocoder'
+    'esri/IdentityManager'
+
 ], function (array, MapController, EditTools, Edit, Editor, TemplatePicker, Geocoder, esriConfig) {
 
     function mapLoaded(map) {
@@ -17,15 +18,12 @@ define([
         //  map: map
         //}, 'map-tools');
 
-
-
          var requestLayer
             , layers = []
             , templatePicker
-            , geocoder;
+             ,geocoder;
 
         requestLayer = map.getLayer('collisionData');
-
         layers.push(requestLayer);
 
         templatePicker = new TemplatePicker({
@@ -33,13 +31,12 @@ define([
             rows: 'auto',
             columns: 1
         }, "template-div");
-
         templatePicker.startup();
 
-//        geocoder = new Geocoder({
-//            map: map
-//        }, "search");
-//        geocoder.startup();
+        geocoder = new Geocoder({
+            map: map
+        }, "search");
+        geocoder.startup();
 
         var layerInfos = array.map(layers, function(layer) {
             return {
