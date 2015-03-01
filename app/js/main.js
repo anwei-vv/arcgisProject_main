@@ -6,11 +6,14 @@ require([
 ], function (appCtrl, mapServices) {
 
   console.debug('DEBUG - Starting application');
+
+  var startExtent
+
   appCtrl.init({
     elem: 'map-div',
     mapOptions: {
       basemap: 'streets',
-      center: [-73.987,40.749],
+      center: [-72.946,40.857],
       zoom: 12
     },
     layers: mapServices.loadServices()

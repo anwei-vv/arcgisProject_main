@@ -34,8 +34,14 @@ define([
         templatePicker.startup();
 
         geocoder = new Geocoder({
-            map: map
+            map: map,
+            autocomplete:true
+//            arcgisGeocoder:{
+//                name: "Esri World Geocoder",
+//                suffix: "Brookhaven, NY"
+//            }
         }, "search");
+        geocoder.autofocus = false;
         geocoder.startup();
 
         var layerInfos = array.map(layers, function(layer) {

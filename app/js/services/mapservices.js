@@ -10,6 +10,7 @@ define([
         , VIVIDATA_URL = 'http://services1.arcgis.com/ZhjKRreEd5wQZMXX/arcgis/rest/services/ViviLayer/FeatureServer/0'
         , COLLISION_URL = 'http://services1.arcgis.com/ZhjKRreEd5wQZMXX/arcgis/rest/services/GIS_TS_ACCIDENT_REPORT_data_layer/FeatureServer/0';
 
+
   function loadServices(config) {
     var layers = []
     // census tract
